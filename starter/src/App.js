@@ -3,12 +3,20 @@ import React, { useState } from 'react';
 export default function App() {
 	const questions = [
 		{
-			questionText: 'What is the capital of France?',
+			questionText: `What is the output?
+							function sayHi() {
+								console.log(name);
+								console.log(age);
+								var name = 'Lydia';
+								let age = 21;
+			  				}
+			  
+			  				sayHi();`,
 			answerOptions: [
-				{ answerText: 'New York', isCorrect: false },
-				{ answerText: 'London', isCorrect: false },
-				{ answerText: 'Paris', isCorrect: true },
-				{ answerText: 'Dublin', isCorrect: false },
+				{ answerText: 'Lydia and undefined', isCorrect: false },
+				{ answerText: 'Lydia and ReferenceError', isCorrect: false },
+				{ answerText: 'ReferenceError and 21', isCorrect: false },
+				{ answerText: 'undefined and ReferenceError', isCorrect: true },
 			],
 		},
 		{
