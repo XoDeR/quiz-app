@@ -5,6 +5,7 @@ export default function App() {
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 	
+	{/* Questions taken from https://github.com/lydiahallie/javascript-questions#readme */}
 	const questions = [
 		{
 			questionText: `What is the output?
@@ -24,30 +25,49 @@ export default function App() {
 			],
 		},
 		{
-			questionText: 'Who is CEO of Tesla?',
+			questionText: `What's the output?
+			for (var i = 0; i < 3; i++) {
+			  setTimeout(() => console.log(i), 1);
+			}
+			
+			for (let i = 0; i < 3; i++) {
+			  setTimeout(() => console.log(i), 1);
+			}`,
 			answerOptions: [
-				{ answerText: 'Jeff Bezos', isCorrect: false },
-				{ answerText: 'Elon Musk', isCorrect: true },
-				{ answerText: 'Bill Gates', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
+				{ answerText: '0 1 2 and 0 1 2', isCorrect: false },
+				{ answerText: '0 1 2 and 3 3 3', isCorrect: false },
+				{ answerText: '3 3 3 and 0 1 2', isCorrect: true },
+				{ answerText: '3 3 3 and 3 3 3', isCorrect: false },
 			],
 		},
 		{
-			questionText: 'The iPhone was created by which company?',
+			questionText: `What's the output?
+			const shape = {
+			  radius: 10,
+			  diameter() {
+				return this.radius * 2;
+			  },
+			  perimeter: () => 2 * Math.PI * this.radius,
+			};
+			
+			console.log(shape.diameter());
+			console.log(shape.perimeter());`,
 			answerOptions: [
-				{ answerText: 'Apple', isCorrect: true },
-				{ answerText: 'Intel', isCorrect: false },
-				{ answerText: 'Amazon', isCorrect: false },
-				{ answerText: 'Microsoft', isCorrect: false },
+				{ answerText: '20 and 62.83185307179586', isCorrect: false },
+				{ answerText: '20 and NaN', isCorrect: true },
+				{ answerText: '20 and 63', isCorrect: false },
+				{ answerText: 'NaN and 63', isCorrect: false },
 			],
 		},
 		{
-			questionText: 'How many Harry Potter books are there?',
+			questionText: `What's the output?
+			+true;
+			!'Lydia';`,
 			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
+				{ answerText: '1 and false', isCorrect: true },
+				{ answerText: 'false and NaN', isCorrect: false },
+				{ answerText: 'false and false', isCorrect: false },
+				{ answerText: '1 and NaN', isCorrect: false },
 			],
 		},
 	];
